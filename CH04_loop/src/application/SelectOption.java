@@ -9,6 +9,7 @@ public class SelectOption {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("옵션을 선택 > ");
 		int menu = scanner.nextInt();
+		scanner.close();
 		
 		if (menu == 1) {
 			System.out.println("헬로우");
