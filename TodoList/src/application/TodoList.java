@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //뭐가 있어야하나
@@ -13,17 +14,14 @@ public class TodoList {
 	private boolean isRunning = true;
 	Scanner scanner = new Scanner(System.in);
 	// 저장된 투두리스트
-	Listed listed = new Listed();
+	private ArrayList<Listed> listed = new ArrayList<>();
 
 	public void run() {
 		while (isRunning) {
 			menu();
 		}
 		scanner.close();
-//		
-//		DeleteList();
-//		DoneList();
-//		
+	
 	}
 
 	private void menu() {
@@ -44,13 +42,13 @@ public class TodoList {
 			break;
 		case 2:
 			insertList();
+//			isRunning = false;
 			break;
 		case 3:
-			System.out.println("[투두리스트를 삭제합니다]");
+			deleteList();
 			break;
 		default:
 			System.out.println("1~3까지의 옵션 번호를 입력해주세요");
-			break;
 		}
 
 	}
@@ -66,13 +64,25 @@ public class TodoList {
 
 	// 새로운 투두리스트 항목을 추가
 	private void insertList() {
+		
+		
 		System.out.println();
 		System.out.println("[투두리스트를 추가합니다]");
-
+		
+		Scanner scanner = new Scanner(System.in);
 		String insert = scanner.nextLine();
+		System.out.println(insert);
 		// 입력한 항목을 저장 -> 아직 구현 안했음
 		listed.add(new Listed(insert));
+		
 
 	}
-
+	
+	private void deleteList() {
+		System.out.println();
+		System.out.println("[투두리스트를 삭제합니다]");
+		Scanner scanner = new Scanner(System.in);
+		int del = scanner.nextInt();
+		listed.remove(del+1);
+	}
 }
