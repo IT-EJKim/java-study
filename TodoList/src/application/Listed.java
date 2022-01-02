@@ -1,8 +1,7 @@
 package application;
 
 public class Listed {
-	
-	// 입력된 게 todo에 저장되서 
+
 	private String insert;
 
 	public Listed(String insert) {
@@ -22,19 +21,10 @@ public class Listed {
 	}
 
 
-
+	
 	@Override
-	// 숫자 매기기부터 다시하기
 	public String toString() {
-		int num = 0;
-		for (int i = 0; i <= 100; i++) {
-			num += i;
-		}
-		return num + insert + "\n";
+		return insert;
 	}
 
-//	public void add(Listed listed) {
-//		// TODO Auto-generated method stub
-//		
-//	}
 }
